@@ -26,21 +26,19 @@ def trackMultipleObjects():
 	rectangleColor = (0, 255, 0)
 	frameCounter = 0
 	currentCarID = 0
-	fps = 0
 	
 	carTracker = {}
-	carNumbers = {}
 	carLocation1 = {}
 	carLocation2 = {}
 	speed = [None] * 1000
 	
 	# Write output to video file
-	out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (WIDTH,HEIGHT))
+	cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (WIDTH,HEIGHT))
 
 
 	while True:
 		start_time = time.time()
-		rc, image = video.read()
+		_, image = video.read()
 		if type(image) == type(None):
 			break
 		
